@@ -10,6 +10,11 @@ vim.keymap.set("n", "<leader>fg", function()
   require("telescope.builtin").live_grep()
 end, { desc = "Live Grep" })
 
+-- Command aliases
+vim.api.nvim_create_user_command("Ldt", function()
+  vim.cmd("Leet desc toggle")
+end, { desc = "Leet desc toggle" })
+
 vim.keymap.set({ "n", "v" }, "<leader>f", function()
   local filetype = vim.bo.filetype
   local opts = { async = true }
